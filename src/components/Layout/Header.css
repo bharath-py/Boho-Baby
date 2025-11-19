@@ -1,0 +1,213 @@
+/* ============================================
+   HEADER/NAVBAR STYLES - COMBINED
+   ============================================ */
+
+/* Main Header/Navbar Container */
+.app-header,
+.navbar {
+  background-color: var(--color-bg-card);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  padding: var(--spacing-md) 0;
+}
+
+/* Header Content Container */
+.header-content,
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.header-logo h2,
+.navbar-logo {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  font-family: var(--font-family-heading);
+  letter-spacing: 1px;
+}
+
+/* Logo and menu on the left */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-logo h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.navbar-logo img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  gap: var(--spacing-lg);
+  list-style: none;
+  align-items: center;
+}
+
+.navbar-link {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-sm);
+}
+
+.navbar-link:hover {
+  color: var(--color-primary);
+  background-color: var(--color-cream);
+}
+
+.navbar-link.active {
+  color: var(--color-text-primary);
+  background-color: var(--color-cream);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Header Actions */
+.header-actions,
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* Keep actions on the right */
+.navbar-actions {
+  margin-left: auto;
+}
+
+/* User Role Badge */
+.user-role {
+  padding: 6px 12px;
+  background-color: var(--color-cream);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  text-transform: capitalize;
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+/* Navbar User Display */
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+  background-color: var(--color-cream);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Logout Button */
+.logout-btn {
+  padding: var(--spacing-xs) var(--spacing-md);
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-size: var(--font-size-sm);
+}
+
+.logout-btn:hover {
+  background-color: #E6BE00;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.logout-btn:active {
+  transform: translateY(0);
+}
+
+/* Mobile Menu Toggle */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: var(--font-size-xl);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header,
+  .navbar {
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .header-content,
+  .navbar-container {
+    padding: 0 var(--spacing-md);
+    flex-wrap: wrap;
+  }
+  
+  .header-logo h2,
+  .navbar-logo {
+    font-size: var(--font-size-lg);
+  }
+  
+  .navbar-logo img {
+    height: 24px;
+  }
+  
+  .header-actions,
+  .navbar-actions {
+    gap: var(--spacing-xs);
+  }
+  
+  .user-role {
+    display: none;
+  }
+  
+  .logout-btn {
+    padding: 6px 12px;
+    font-size: var(--font-size-xs);
+  }
+  
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--spacing-md);
+    gap: var(--spacing-xs);
+  }
+  
+  .navbar-menu.active {
+    display: flex;
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+  
+  .navbar-link {
+    width: 100%;
+    text-align: left;
+  }
+}
