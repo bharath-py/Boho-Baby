@@ -5,6 +5,12 @@ pymysql.install_as_MySQLdb()
 from pathlib import Path
 from datetime import timedelta
 from decouple import config
+from decouple import config
+
+# Safe for local development, will fail in production without .env
+SECRET_KEY = config('SECRET_KEY', default='dev-only-key-not-for-production')
+DEBUG = config('DEBUG', default=True, cast=bool)
+
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
